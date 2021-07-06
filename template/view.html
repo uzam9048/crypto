@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+
+
+{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Bullish Engulfing</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+            <!-- <form action="{{ url_for("home_page")}}" method="post"></form>                   -->
+            <form action="/bullishengulfing/15m"> <input type="submit" value="15m" /></form>
+            <form action="/bullishengulfing/30m"> <input type="submit" value="30m" /></form>
+            <form action="/bullishengulfing/1hr"> <input type="submit" value="1hr" /></form>
+            <form action="/bullishengulfing"> <input type="submit" value="Daily" /></form>
+            <form action="/bullishengulfing/1wk"> <input type="submit" value="Weekly" /></form>
+            <form action="/bullishengulfing/1mo"> <input type="submit" value="Monthly" /></form>
+            
+          </div>
+      <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This week
+      </button> -->
+    </div>
+  </div>
+    {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+    {% endfor %}
+
+  <h3>Tutorial on Bullish Engulfing Patterns</h3>
+  <p align="justify" style="text-align:justify">
+
+    <b>What is Bullish Engulfing Pattern?</b><br>
+    Bullish Engulfing Candlestick Pattern generally forms at the bottom of a downtrend.
+    , during a decline or near a potential support. Basically it is made up of two candlestick or can say it takes 2 day for the pattern to formed.<br>
+    
+    <b> 1. Day 1</b> (Smaller Bearish Candlestick): On Day 1, a bearish candlestick (Open price is higher than the close price) is formed shown as red candlestick in the Figure.<br>
+    <b> 2. Day 2 </b> (Larger Bullish Candlestick): On Day 2, a bullish candlestick(open price lower than the close price) is formed which completely covers or engulfs the body of bearish candlestick formed on Day 1, shown as green candlestick in the below Figure.<br><br>
+    
+    
+    The <b> name</b>  of this pattern is derived from the same fact that, Day 2 candlestick completely engulfs the Day 1 Candlestick.<br>
+    
+    </p>
+      <!-- <div style="width: auto; float:right">  -->
+      <!-- <img src="static/billish.jpg" alt="Sample"> -->
+    <img src="{{url_for('static', filename='bullish.png')}}" alt="Bullish Engulfing Entry Strategy">
+      <!-- </div> / -->
+{% endblock %}
