@@ -52,11 +52,11 @@ def bullish_hourly():
     return render_template('view.html',tables=[bullish_engulfing.to_html(classes='BULLISH_ENGULFING')],
     titles = ['na','BULLISH ENGULFING Hourly Time Frame of Last 7 days'])   
 
-@app.route("/bullishengulfing/1wk")
-def bullish_weekly():
-    bullish_engulfing = bullish_weekly.bullish_engulfing
-    return render_template('view.html',tables=[bullish_engulfing.to_html(classes='BULLISH_ENGULFING')],
-    titles = ['na','BULLISH ENGULFING Weekly Time Frame']) 
+# @app.route("/bullishengulfing/1wk")
+# def bullish_weekly():
+#     bullish_engulfing = bullish_weekly.bullish_engulfing
+#     return render_template('view.html',tables=[bullish_engulfing.to_html(classes='BULLISH_ENGULFING')],
+#     titles = ['na','BULLISH ENGULFING Weekly Time Frame']) 
 
 @app.route("/bearishengulfing")
 def bearish_engulfing():
@@ -84,11 +84,11 @@ def bearish_hourly():
     return render_template('view_bearish.html',tables=[bearish_engulfing.to_html(classes='BEARISH_ENGULFING')],
     titles = ['na','BEARISH ENGULFING  1 hour TimeFrame of Last 7 days'])
 
-@app.route("/bearishengulfing/1wk")
-def bearish_weekly():
-    bearish_engulfing = bearish_weekly.bearish_engulfing
-    return render_template('view_bearish.html',tables=[bearish_engulfing.to_html(classes='BEARISH_ENGULFING')],
-    titles = ['na','BEARISH ENGULFING  weekly TimeFrame'])    
+# @app.route("/bearishengulfing/1wk")
+# def bearish_weekly():
+#     bearish_engulfing = bearish_weekly.bearish_engulfing
+#     return render_template('view_bearish.html',tables=[bearish_engulfing.to_html(classes='BEARISH_ENGULFING')],
+#     titles = ['na','BEARISH ENGULFING  weekly TimeFrame'])    
 
 
 
